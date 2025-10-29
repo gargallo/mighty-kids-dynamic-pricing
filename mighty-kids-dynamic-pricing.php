@@ -3,8 +3,8 @@
  * Plugin Name: Mighty Kids Dynamic Pricing
  * Plugin URI: https://mightykidssupplements.co.uk/
  * Description: Dynamic pricing display for Mighty Kids products with subscription and bulk discount support.
- * Author: Progressus
- * Author URI: https://progressus.io/
+ * Author: Daniel Gargallo
+ * Author URI: https://mightykidssupplements.co.uk/
  * Version: 1.0.0
  * Requires at least: 6.6
  * Requires PHP: 8.2

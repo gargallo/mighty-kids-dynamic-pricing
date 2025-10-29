@@ -36,6 +36,7 @@ A WordPress plugin that provides dynamic pricing display for WooCommerce product
 ### Integration with Mighty Kids Plugin
 
 When the Mighty Kids plugin is active, this plugin will automatically use:
+
 - Bulk discount settings from the main plugin
 - Discount tiers configuration
 - Product qualification rules
@@ -43,6 +44,7 @@ When the Mighty Kids plugin is active, this plugin will automatically use:
 ## Usage
 
 The plugin automatically displays dynamic pricing on product pages when:
+
 1. Bulk discounts are enabled AND the product qualifies, OR
 2. The product has subscription schemes (independent of bulk discounts)
 
@@ -95,6 +97,7 @@ mighty-kids-dynamic-pricing/
 ## Changelog
 
 ### 1.0.0
+
 - Initial release
 - Dynamic pricing display for subscriptions and bulk discounts
 - Admin settings panel

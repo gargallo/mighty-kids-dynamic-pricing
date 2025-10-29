@@ -11,6 +11,7 @@
 namespace MightyKids\DynamicPricing\Admin;
 
 use MightyKids\DynamicPricing\Settings;
+use MightyKids\DynamicPricing\Utils;
 
 defined( 'ABSPATH' ) || exit;
 

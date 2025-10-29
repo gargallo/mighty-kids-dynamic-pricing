@@ -1,0 +1,603 @@
+/**
+ * Subscription Price Display Styles
+ *
+ * @package Progressus\MightyKids
+ * @since 1.7.0
+ */
+
+/* Hide WooCommerce original price when dynamic price is shown */
+.single_variation_wrap .woocommerce-variation-price > .price {
+  display: none !important;
+}
+
+/* Clean, minimal container */
+.mk-dynamic-price-wrapper {
+  background: #fff;
+  border-left: 4px solid #c98e1f;
+  padding: 1.25rem 1.5rem;
+  margin: 1rem 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Subtle label */
+.mk-dynamic-price-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #999;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.5rem;
+}
+
+/* Price display - clean and bold */
+.mk-dynamic-price-amount {
+  font-size: 2rem !important;
+  font-weight: 700;
+  color: #1a1a1a;
+  line-height: 1.2;
+  margin-bottom: 0.75rem;
+}
+
+.mk-dynamic-price-amount del {
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: #bbb;
+  text-decoration: line-through;
+  margin-right: 0.75rem;
+}
+
+.mk-dynamic-price-amount .mk-final-price {
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.mk-dynamic-price-amount small {
+  display: inline-block;
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: #888;
+  margin-left: 0.5rem;
+}
+
+/* Simple savings indicator */
+.mk-dynamic-price-savings {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #666;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 0.2s ease;
+}
+
+.mk-dynamic-price-savings::before {
+  content: "✓";
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.125rem;
+  height: 1.125rem;
+  background: #c98e1f;
+  color: #fff;
+  border-radius: 50%;
+  font-size: 0.625rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.mk-dynamic-price-savings:empty {
+  visibility: hidden;
+  opacity: 0;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .mk-dynamic-price-wrapper {
+    padding: 1rem 1.25rem;
+  }
+
+  .mk-dynamic-price-amount {
+    font-size: 1.65rem;
+  }
+
+  .mk-dynamic-price-amount del {
+    font-size: 1.1rem;
+  }
+
+  .mk-dynamic-price-amount small {
+    font-size: 0.8rem;
+  }
+
+  .mk-dynamic-price-savings {
+    font-size: 0.8rem;
+  }
+}
+
+/* Variation not selected state */
+.mk-dynamic-price-amount span[style*="color: #999"] {
+  font-size: 1rem;
+  font-weight: 400;
+  font-style: italic;
+  color: #999 !important;
+}
+
+/* ========================================
+   PREMIUM SUBSCRIPTION TOGGLE STYLES
+   ======================================== */
+
+/* Hide subscription options and related elements by default */
+.wcsatt-options-product-wrapper,
+.jgtb-add-to-subscription,
+.wcsatt-add-to-subscription-wrapper {
+  display: none;
+}
+
+/* Hide sibling elements after options wrapper */
+.wcsatt-options-product-wrapper ~ .first-payment-date {
+  display: none;
+}
+
+/* Hide variation "Clear" button */
+.wc-variation-reset {
+  display: none !important;
+}
+
+/* ========================================
+   SUBSCRIPTION OPTIONS STYLING
+   ======================================== */
+
+/* Dropdown wrapper - clean modern style */
+.wcsatt-options-product-wrapper {
+  margin: 1.25rem 0;
+  padding: 1.35rem 1.65rem;
+  background: linear-gradient(to bottom, #ffffff 0%, #fafbfc 100%);
+  border: 1px solid #e8e8e8;
+  border-radius: 14px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  transition: all 0.25s ease;
+}
+
+.wcsatt-options-product-wrapper:hover {
+  border-color: #d8d8d8;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+}
+
+/* Dropdown label */
+.wcsatt-options-product-dropdown-label {
+  display: block;
+  font-weight: 600;
+  font-size: 0.92rem;
+  color: #374151;
+  margin-bottom: 0.65rem;
+  letter-spacing: -0.01em;
+}
+
+/* Dropdown select */
+.wcsatt-options-product-dropdown {
+  width: 100%;
+  padding: 0.85rem 1.15rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #1f2937;
+  background: #ffffff;
+  border: 1.5px solid #d1d5db;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%23374151' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  padding-right: 2.5rem;
+}
+
+.wcsatt-options-product-dropdown:hover {
+  border-color: #c98e1f;
+  box-shadow: 0 0 0 3px rgba(201, 142, 31, 0.08);
+}
+
+.wcsatt-options-product-dropdown:focus {
+  outline: none;
+  border-color: #c98e1f;
+  box-shadow: 0 0 0 3px rgba(201, 142, 31, 0.15);
+}
+
+/* "Add to your subscription" form */
+.jgtb-add-to-subscription {
+  margin: 1.25rem 0;
+  padding: 1.5rem 1.75rem;
+  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+  border: 1px solid #f59e0b;
+  border-radius: 14px;
+  box-shadow: 0 2px 6px rgba(245, 158, 11, 0.15);
+}
+
+.jgtb-add-to-subscription label {
+  display: block;
+  font-weight: 700;
+  font-size: 0.96rem;
+  color: #92400e;
+  margin-bottom: 0.85rem;
+  letter-spacing: -0.01em;
+}
+
+.jgtb-add-to-subscription select {
+  width: 100%;
+  padding: 0.9rem 1.2rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #1f2937;
+  background: #ffffff;
+  border: 1.5px solid #d1d5db;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-bottom: 1rem;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%23374151' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  padding-right: 2.5rem;
+}
+
+.jgtb-add-to-subscription select:hover {
+  border-color: #c98e1f;
+  box-shadow: 0 0 0 3px rgba(201, 142, 31, 0.08);
+}
+
+.jgtb-add-to-subscription select:focus {
+  outline: none;
+  border-color: #c98e1f;
+  box-shadow: 0 0 0 3px rgba(201, 142, 31, 0.15);
+}
+
+.jgtb-add-to-subscription button[type="submit"] {
+  width: 100%;
+  padding: 0.95rem 1.5rem;
+  font-size: 0.96rem;
+  font-weight: 700;
+  color: #ffffff;
+  background: linear-gradient(135deg, #c98e1f 0%, #b07d1a 100%);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  text-transform: none;
+  letter-spacing: -0.01em;
+  box-shadow: 0 2px 8px rgba(201, 142, 31, 0.25);
+}
+
+.jgtb-add-to-subscription button[type="submit"]:hover:not(:disabled) {
+  background: linear-gradient(135deg, #b07d1a 0%, #9a6d16 100%);
+  box-shadow: 0 4px 12px rgba(201, 142, 31, 0.35);
+  transform: translateY(-2px);
+}
+
+.jgtb-add-to-subscription button[type="submit"]:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none !important;
+  box-shadow: none;
+}
+
+/* "First payment date" text */
+.first-payment-date {
+  margin: 0.75rem 0 0 0;
+  padding: 0;
+}
+
+.first-payment-date small {
+  font-size: 0.85rem;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+/* "Add to existing subscription" wrapper */
+.wcsatt-add-to-subscription-wrapper {
+  margin: 0.25rem 0 0 0;
+  padding: 0.5rem 0.75rem;
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  box-shadow: none;
+  transition: all 0.2s ease;
+  margin-top: 20px;
+}
+
+.wcsatt-add-to-subscription-wrapper:hover {
+  background: #f3f4f6;
+  border-color: #d1d5db;
+}
+
+.wcsatt-add-to-subscription-wrapper:before {
+  margin-top: 0 !important;
+}
+
+.wcsatt-add-to-subscription-action-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.wcsatt-add-to-subscription-action-label:hover
+  .wcsatt-add-to-subscription-action {
+  color: #c98e1f;
+}
+
+.wcsatt-add-to-subscription-action-input {
+  width: 1rem;
+  height: 1rem;
+  cursor: pointer;
+  accent-color: #c98e1f;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.wcsatt-add-to-subscription-action {
+  font-weight: 500;
+  font-size: 0.875rem;
+  color: #374151;
+  letter-spacing: -0.01em;
+  transition: color 0.2s ease;
+  line-height: 1.3;
+}
+
+.wcsatt-add-to-subscription-options {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #e5e7eb;
+}
+
+.mk-subscription-toggle-wrapper {
+  margin: 1.5rem 0;
+  padding: 0;
+}
+
+.mk-subscription-toggle-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 1.15rem;
+  cursor: pointer;
+  user-select: none;
+  position: relative;
+  padding: 1.15rem 1.75rem;
+  background: linear-gradient(145deg, #ffffff 0%, #fafbfc 100%);
+  border: 1.5px solid #e1e8ed;
+  border-radius: 20px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04), 0 4px 12px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+
+.mk-subscription-toggle-label:hover {
+  border-color: #c98e1f;
+  box-shadow: 0 1px 3px rgba(201, 142, 31, 0.08),
+    0 6px 20px rgba(201, 142, 31, 0.12), 0 12px 32px rgba(201, 142, 31, 0.06);
+  transform: translateY(-2px);
+}
+
+.mk-subscription-toggle-input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.mk-subscription-toggle-slider {
+  position: relative;
+  width: 56px;
+  height: 30px;
+  background: #cbd5e1;
+  border-radius: 100px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.08);
+  flex-shrink: 0;
+}
+
+.mk-subscription-toggle-slider::before {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 24px;
+  height: 24px;
+  background: white;
+  border-radius: 50%;
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.mk-subscription-toggle-input:checked + .mk-subscription-toggle-slider {
+  background: linear-gradient(135deg, #c98e1f 0%, #b07a1a 100%);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1),
+    0 0 0 4px rgba(201, 142, 31, 0.1), 0 4px 16px rgba(201, 142, 31, 0.25);
+}
+
+.mk-subscription-toggle-input:checked + .mk-subscription-toggle-slider::before {
+  transform: translateX(26px);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15), 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+.mk-subscription-toggle-text {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #0f172a;
+  letter-spacing: -0.02em;
+  transition: color 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.mk-subscription-toggle-input:checked ~ .mk-subscription-toggle-text {
+  color: #b07a1a;
+}
+
+.mk-subscription-toggle-text::after {
+  content: "10% OFF";
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.35rem 0.75rem;
+  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+  color: #92400e;
+  font-size: 0.7rem;
+  font-weight: 900;
+  border-radius: 8px;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 6px rgba(217, 119, 6, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5);
+  transition: all 0.3s ease;
+}
+
+.mk-subscription-toggle-input:checked ~ .mk-subscription-toggle-text::after {
+  background: linear-gradient(135deg, #fef3c7 0%, #fbbf24 100%);
+  color: #78350f;
+  box-shadow: 0 2px 6px rgba(201, 142, 31, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+/* Active state for the whole label */
+.mk-subscription-toggle-input:checked ~ .mk-subscription-toggle-label {
+  background: linear-gradient(145deg, #fffbeb 0%, #fef3c7 100%);
+  border-color: #fbbf24;
+}
+
+/* Focus state for accessibility */
+.mk-subscription-toggle-input:focus + .mk-subscription-toggle-slider {
+  outline: 2px solid #c98e1f;
+  outline-offset: 2px;
+}
+
+/* Responsive for mobile */
+@media (max-width: 768px) {
+  .mk-subscription-toggle-label {
+    padding: 0.875rem 1.25rem;
+  }
+
+  .mk-subscription-toggle-slider {
+    width: 48px;
+    height: 26px;
+  }
+
+  .mk-subscription-toggle-slider::before {
+    width: 22px;
+    height: 22px;
+  }
+
+  .mk-subscription-toggle-input:checked
+    + .mk-subscription-toggle-slider::before {
+    transform: translateX(22px);
+  }
+
+  .mk-subscription-toggle-text {
+    font-size: 0.95rem;
+  }
+
+  .mk-subscription-toggle-text::after {
+    font-size: 0.65rem;
+    padding: 0.2rem 0.5rem;
+  }
+}
+
+/* ============================================================================
+   ADD TO CART / SIGN UP NOW BUTTON - IMPROVED DESIGN
+   ============================================================================ */
+
+/* Cart form layout */
+.single-product form.cart {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: flex-start !important;
+  gap: 0.75rem !important;
+}
+
+/* Quantity wrapper adjustments */
+.single-product form.cart .quantity {
+  flex: 0 0 auto !important;
+  margin: 0 !important;
+}
+
+/* Main button styling */
+.single-product form.cart button.single_add_to_cart_button,
+.single-product form.cart .single_add_to_cart_button {
+  margin-left: 5px !important;
+  flex: 1 1 auto !important;
+  min-width: 200px !important;
+  margin: 0 !important;
+  margin-left: 10px !important;
+  padding: 0.875rem 2rem !important;
+  font-size: 1.0625rem !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.5px !important;
+  border-radius: 10px !important;
+  border: none !important;
+  background: linear-gradient(135deg, #546e7a 0%, #455a64 100%) !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 12px rgba(84, 110, 122, 0.3) !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  cursor: pointer !important;
+  position: relative !important;
+  overflow: hidden !important;
+  white-space: nowrap !important;
+  height: 52px !important;
+}
+
+/* Hover effect */
+.single-product form.cart button.single_add_to_cart_button:hover,
+.single-product form.cart .single_add_to_cart_button:hover {
+  background: linear-gradient(135deg, #455a64 0%, #37474f 100%) !important;
+  box-shadow: 0 6px 20px rgba(84, 110, 122, 0.4) !important;
+  transform: translateY(-2px) !important;
+}
+
+/* Active/pressed state */
+.single-product form.cart button.single_add_to_cart_button:active,
+.single-product form.cart .single_add_to_cart_button:active {
+  transform: translateY(0) !important;
+  box-shadow: 0 2px 8px rgba(84, 110, 122, 0.3) !important;
+}
+
+/* Loading state */
+.single-product form.cart button.single_add_to_cart_button.loading,
+.single-product form.cart .single_add_to_cart_button.loading {
+  opacity: 0.7 !important;
+  pointer-events: none !important;
+}
+
+/* Disabled state */
+.single-product form.cart button.single_add_to_cart_button:disabled,
+.single-product form.cart .single_add_to_cart_button:disabled {
+  opacity: 0.5 !important;
+  cursor: not-allowed !important;
+  background: #9e9e9e !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .single-product form.cart {
+    flex-direction: column !important;
+  }
+
+  .single-product form.cart .quantity {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .single-product form.cart button.single_add_to_cart_button,
+  .single-product form.cart .single_add_to_cart_button {
+    width: 100% !important;
+    flex: 1 1 100% !important;
+    padding: 0.875rem 1.5rem !important;
+    font-size: 1rem !important;
+    height: 48px !important;
+  }
+}

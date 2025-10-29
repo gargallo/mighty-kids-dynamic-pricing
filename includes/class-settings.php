@@ -85,10 +85,17 @@ class Settings {
 
 	/**
 	 * Get discount tiers configuration.
+	 * Always tries to get from Mighty Kids plugin first.
 	 *
 	 * @return array
 	 */
 	public static function get_discount_tiers(): array {
+		// Try to get from Mighty Kids plugin first
+		if ( class_exists( '\Progressus\MightyKids\Discounts\Bulk_Discount_Manager' ) ) {
+			return \Progressus\MightyKids\Discounts\Bulk_Discount_Manager::get_discount_tiers();
+		}
+
+		// Fallback to plugin's own configuration only if Mighty Kids is not available
 		$tiers = self::get_setting( self::OPTION_DISCOUNT_TIERS, false );
 		
 		// If no custom tiers are set, use defaults.

@@ -9,7 +9,7 @@ A WordPress plugin that provides dynamic pricing display for WooCommerce product
 - **Bulk discount support** (quantity-based pricing)
 - **Variable product support** with variation selection
 - **Caching system** for improved performance
-- **Admin settings panel** for configuration
+- **Completely automatic** - no configuration needed
 - **Integration with Mighty Kids plugin** (when available)
 
 ## Requirements
@@ -23,23 +23,22 @@ A WordPress plugin that provides dynamic pricing display for WooCommerce product
 
 1. Upload the plugin files to `/wp-content/plugins/mighty-kids-dynamic-pricing/`
 2. Activate the plugin through the 'Plugins' screen in WordPress
-3. Configure the settings under WooCommerce > Dynamic Pricing
+3. The plugin works automatically - no configuration needed!
 
-## Configuration
+## How It Works
 
-### Basic Settings
+This plugin is **completely automatic** and requires no configuration. It intelligently:
 
-- **Enable Bulk Discounts**: Toggle quantity-based pricing
-- **Subscription Discount (%)**: Default discount for subscription products
-- **Discount Tiers**: Configure quantity-based discount levels
+### With Mighty Kids Plugin Active
+- Uses bulk discount settings from the main Mighty Kids plugin
+- Uses discount tiers configuration from the main plugin
+- Uses product qualification rules from the main plugin
+- Applies subscription discounts (10% by default)
 
-### Integration with Mighty Kids Plugin
-
-When the Mighty Kids plugin is active, this plugin will automatically use:
-
-- Bulk discount settings from the main plugin
-- Discount tiers configuration
-- Product qualification rules
+### Without Mighty Kids Plugin
+- Uses default discount tiers (2-2 qty: 5%, 3-4 qty: 10%, 5+ qty: 15%)
+- Applies subscription discounts (10% by default)
+- All products qualify for bulk discounts by default
 
 ## Usage
 
@@ -84,8 +83,6 @@ mighty-kids-dynamic-pricing/
 │   ├── class-dynamic-pricing.php      # Main functionality
 │   ├── class-settings.php             # Settings management
 │   └── class-utils.php                # Utility functions
-├── admin/
-│   └── class-admin-settings.php       # Admin interface
 └── assets/
     ├── css/
     │   └── dynamic-pricing.css        # Styles
@@ -100,7 +97,7 @@ mighty-kids-dynamic-pricing/
 
 - Initial release
 - Dynamic pricing display for subscriptions and bulk discounts
-- Admin settings panel
+- Completely automatic operation - no configuration needed
 - Integration with Mighty Kids plugin
 
 ## Support

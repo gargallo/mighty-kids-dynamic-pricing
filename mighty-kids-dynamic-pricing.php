@@ -103,9 +103,6 @@ class Mighty_Kids_Dynamic_Pricing {
 		require_once MKDYNAMIC_DIR_PATH . '/includes/class-settings.php';
 		require_once MKDYNAMIC_DIR_PATH . '/includes/class-utils.php';
 		
-		if ( is_admin() ) {
-			require_once MKDYNAMIC_DIR_PATH . '/admin/class-admin-settings.php';
-		}
 	}
 
 	/**
@@ -123,10 +120,6 @@ class Mighty_Kids_Dynamic_Pricing {
 
 		// Initialize components.
 		new Dynamic_Pricing();
-		
-		if ( is_admin() ) {
-			new Admin\Admin_Settings();
-		}
 	}
 
 	/**
